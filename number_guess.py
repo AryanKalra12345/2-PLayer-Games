@@ -8,39 +8,32 @@ root.configure(bg="#f0f4f8")
 secret_number = None
 attempts = 0
 
-# --- Title ---
 Label(root, text="Number Guessing Game",
       font=("Arial", 20, "bold"), bg="#f0f4f8", fg="#333").pack(pady=20)
 
-# --- Instruction ---
 instruction = Label(root, text="Player 1: Enter a secret number",
                     font=("Arial", 12), bg="#f0f4f8", fg="#777")
 instruction.pack()
 
-# --- Entry Box ---
 entry = Entry(root, font=("Arial", 18), justify="center",
               width=10, relief="flat", bg="#dce3ea", fg="#333")
 entry.pack(pady=15, ipady=8)
 entry.focus()
 
-# --- Feedback ---
 feedback = Label(root, text="",
                  font=("Arial", 12, "bold"), bg="#f0f4f8", fg="#555")
 feedback.pack(pady=5)
 
-# --- Attempts ---
 attempts_label = Label(root, text="Attempts: 0",
                        font=("Arial", 11), bg="#f0f4f8", fg="#999")
 attempts_label.pack()
 
-# --- Button ---
 btn = Button(root, text="Set Number",
              font=("Arial", 13, "bold"),
              bg="#3498db", fg="white", relief="flat",
              padx=25, pady=8, cursor="hand2")
 btn.pack(pady=20)
 
-# --- Logic ---
 def set_number():
     global secret_number, attempts
     val = entry.get().strip()
